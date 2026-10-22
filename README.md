@@ -1,5 +1,13 @@
 # platform-ops
 
+> [!IMPORTANT]
+> **This repository is sunset and archived.**
+> [`agentsfleet`](https://github.com/agentsfleet/agentsfleet) now allows a user
+> to author their own fleets directly, so this standalone Fleet Bundle is no
+> longer maintained. Use
+> [github.com/agentsfleet/agentsfleet](https://github.com/agentsfleet/agentsfleet)
+> instead. The content below is kept for reference only.
+
 A prebuilt `agentsfleet` fleet that diagnoses production incidents. It reads Fly.io app state and logs, pulls Upstash Redis stats, correlates the two, and posts a plain-prose diagnosis to one Slack channel. It is strictly read-only against Fly and Upstash — it can list, read, and reason, but never deploy, scale, restart, or flush. Its single write path is the Slack post.
 
 It wakes three ways: a GitHub Actions `workflow_run` failure on your production branch, a cron schedule you set at install time ("morning health check"), or a direct `agentsfleet steer`.
